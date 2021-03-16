@@ -21,15 +21,17 @@ state = {
   };
 
   totalFeedback = () => {
-    return this.state.good + this.state.bad + this.state.neutral;
+    const { good, neutral, bad } = this.state;
+    return good + bad + neutral;
   }
 
   positiveFeedback = () => {
-    return Math.floor((this.state.good * 100) / (this.state.good + this.state.bad + this.state.neutral))
+    const { good, neutral, bad } = this.state;
+    return Math.floor((good * 100) / (good + bad + neutral))
   }
 
     render() {
-      // const { good, neutral, bad } = this.state;
+  
     return (
       <>
         <Section title="Please leave feedback">
